@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <div class="container">
+        <!-- Main Page -->
+        <div id="mainPage" class="page active">
+            <div class="header">
+                <h1>STEGANOGRAPHY PRO</h1>
+                <p class="subtitle">Hide & Extract Data from Images with Advanced Encryption</p>
+            </div>
+            
+            <div class="main-options">
+                <div class="option-card" onclick="showHidePage()">
+                    <div class="option-icon">🔒</div>
+                    <h3 class="option-title">Hide Data</h3>
+                    <p class="option-description">Embed secret text into images using advanced steganographic techniques</p>
+                </div>
+                
+                <div class="option-card" onclick="showExtractPage()">
+                    <div class="option-icon">🔓</div>
+                    <h3 class="option-title">Extract Data</h3>
+                    <p class="option-description">Retrieve hidden messages from images with precision</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hide Data Page -->
+        <div id="hidePage" class="page">
+            <div class="header">
+                <button class="btn btn-secondary back-btn" onclick="showMainPage()">← Back to Main</button>
+                <h1>Hide Secret Data</h1>
+                <p class="subtitle">Embed your message into an image</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-group">
+                    <label>Select Image</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="hideImageInput" class="file-input" accept="image/*" onchange="handleImageUpload(this, 'hidePreview')">
+                        <div class="file-input-display" id="hideImageDisplay">
+                            <div class="upload-icon">📁</div>
+                            <div>Click to select an image</div>
+                        </div>
+                    </div>
+                    <img id="hidePreview" class="image-preview" style="display: none;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Secret Message</label>
+                    <textarea id="secretText" placeholder="Enter your secret message here..."></textarea>
+                </div>
+                
+                <button class="btn" onclick="hideData()" id="hideBtn">
+                    Hide Data in Image
+                </button>
+                
+                <div class="progress-bar" id="hideProgress" style="display: none;">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <div id="hideResult" class="result-container" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Extract Data Page -->
+        <div id="extractPage" class="page">
+            <div class="header">
+                <button class="btn btn-secondary back-btn" onclick="showMainPage()">← Back to Main</button>
+                <h1>Extract Hidden Data</h1>
+                <p class="subtitle">Retrieve secret messages from images</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-group">
+                    <label>Select Image with Hidden Data</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="extractImageInput" class="file-input" accept="image/*" onchange="handleImageUpload(this, 'extractPreview')">
+                        <div class="file-input-display" id="extractImageDisplay">
+                            <div class="upload-icon">📁</div>
+                            <div>Click to select an image</div>
+                        </div>
+                    </div>
+                    <img id="extractPreview" class="image-preview" style="display: none;">
+                </div>
+                
+                <button class="btn" onclick="extractData()" id="extractBtn">
+                    Extract Hidden Data
+                </button>
+                
+                <div class="progress-bar" id="extractProgress" style="display: none;">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <div id="extractResult" class="result-container" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
