@@ -9,4 +9,4 @@ This project allows users to hide data (like text) inside an image securely. The
 
 ![image alt](https://github.com/jayanth1u/Data-Storage-Using-Image-Steganography/blob/f1bdc0d6bf513f15e91a9a8f8b7f403b8910d84e/Screenshot%202025-08-25%20155901.png)
 
-![image alt]()
+![image alt](https://github.com/jayanth1u/Data-Storage-Using-Image-Steganography/blob/b872d32e820b669747604b3fa5ce03c8518bcdf2/Screenshot%202025-08-25%20155932.png)
